@@ -1,15 +1,11 @@
 package org.testmail.email;
 
 import javax.mail.Message;
-
 import java.util.List;
-
 import junit.framework.TestCase;
 import org.junit.Test;
 
-/**
- * Created by Kalana on 9/5/2017.
- */
+
 public class EmailTest extends TestCase {
 
 	private Email mail;
@@ -23,71 +19,71 @@ public class EmailTest extends TestCase {
 
 	@Test
 	public void testAddToRecipients() throws Exception {
-		mail.addToRecipients("kalana@gmail.com;suraweera@gmail.com");
+		mail.addToRecipients("gayan@gmail.com;shanaka@gmail.com");
 		List<Recipient> recipients = mail.getRecipients();
 		assertEquals(recipients.get(0).getType(), Message.RecipientType.TO);
-		assertEquals(recipients.get(0).getAddress(),"kalana@gmail.com");
+		assertEquals(recipients.get(0).getAddress(),"gayan@gmail.com");
 		assertEquals(recipients.get(1).getType(), Message.RecipientType.TO);
-		assertEquals(recipients.get(1).getAddress(),"suraweera@gmail.com");
+		assertEquals(recipients.get(1).getAddress(),"shanaka@gmail.com");
 
 	}
 
 	@Test
 	public void testAddCcRecipients() throws Exception {
-		mail.addCcRecipients("kalana@gmail.com;suraweera@gmail.com");
+		mail.addCcRecipients("gayan@gmail.com;shanaka@gmail.com");
 		List<Recipient> recipients = mail.getRecipients();
 		assertEquals(recipients.get(0).getType(), Message.RecipientType.CC);
-		assertEquals(recipients.get(0).getAddress(),"kalana@gmail.com");
+		assertEquals(recipients.get(0).getAddress(),"gayan@gmail.com");
 		assertEquals(recipients.get(1).getType(), Message.RecipientType.CC);
-		assertEquals(recipients.get(1).getAddress(),"suraweera@gmail.com");
+		assertEquals(recipients.get(1).getAddress(),"shanaka@gmail.com");
 	}
 
 	@Test
 	public void testAddBccRecipients() throws Exception {
-		mail.addBccRecipients("kalana@gmail.com;suraweera@gmail.com");
+		mail.addBccRecipients("gayan@gmail.com;shanaka@gmail.com");
 		List<Recipient> recipients = mail.getRecipients();
 		assertEquals(recipients.get(0).getType(), Message.RecipientType.BCC);
-		assertEquals(recipients.get(0).getAddress(),"kalana@gmail.com");
+		assertEquals(recipients.get(0).getAddress(),"gayan@gmail.com");
 		assertEquals(recipients.get(1).getType(), Message.RecipientType.BCC);
-		assertEquals(recipients.get(1).getAddress(),"suraweera@gmail.com");
+		assertEquals(recipients.get(1).getAddress(),"shanaka@gmail.com");
 	}
 
 	@Test
 	public void testAddNamedToRecipients() throws Exception {
-		mail.addNamedToRecipients("kalana","kalana@gmail.com");
+		mail.addNamedToRecipients("gayan","gayan@gmail.com");
 		List<Recipient> recipients = mail.getRecipients();
 		assertEquals(recipients.get(0).getType(), Message.RecipientType.TO);
-		assertEquals(recipients.get(0).getAddress(),"kalana@gmail.com");
-		assertEquals(recipients.get(0).getName(), "kalana");
+		assertEquals(recipients.get(0).getAddress(),"gayan@gmail.com");
+		assertEquals(recipients.get(0).getName(), "gayan");
 
 	}
 
 	@Test
 	public void testAddNamedCcRecipients() throws Exception {
-		mail.addNamedCcRecipients("kalana","kalana@gmail.com");
+		mail.addNamedCcRecipients("gayan","gayan@gmail.com");
 		List<Recipient> recipients = mail.getRecipients();
 		assertEquals(recipients.get(0).getType(), Message.RecipientType.CC);
-		assertEquals(recipients.get(0).getAddress(),"kalana@gmail.com");
-		assertEquals(recipients.get(0).getName(), "kalana");
+		assertEquals(recipients.get(0).getAddress(),"gayan@gmail.com");
+		assertEquals(recipients.get(0).getName(), "gayan");
 	}
 
 	@Test
 	public void testAddNamedBccRecipients() throws Exception {
-		mail.addNamedBccRecipients("kalana","kalana@gmail.com");
+		mail.addNamedBccRecipients("gayan","gayan@gmail.com");
 		List<Recipient> recipients = mail.getRecipients();
 		assertEquals(recipients.get(0).getType(), Message.RecipientType.BCC);
-		assertEquals(recipients.get(0).getAddress(),"kalana@gmail.com");
-		assertEquals(recipients.get(0).getName(), "kalana");
+		assertEquals(recipients.get(0).getAddress(),"gayan@gmail.com");
+		assertEquals(recipients.get(0).getName(), "gayan");
 	}
 
 	@Test
 	public void testAddRecipients() throws Exception {
-		mail.addRecipients("Kalana", Message.RecipientType.TO,"kalanasuraweera@gmail.com;jaga@yahoo.com");
+		mail.addRecipients("gayan", Message.RecipientType.TO,"gayanshanaka@gmail.com;tj@yahoo.com");
 		List<Recipient> recipients = mail.getRecipients();
-		assertEquals(recipients.get(0).getName(),"Kalana");
-		assertEquals(recipients.get(0).getAddress(),"kalanasuraweera@gmail.com");
-		assertEquals(recipients.get(1).getName(),"Kalana");
-		assertEquals(recipients.get(1).getAddress(),"jaga@yahoo.com");
+		assertEquals(recipients.get(0).getName(),"gayan");
+		assertEquals(recipients.get(0).getAddress(),"gayanshanaka@gmail.com");
+		assertEquals(recipients.get(1).getName(),"gayan");
+		assertEquals(recipients.get(1).getAddress(),"tj@yahoo.com");
 
 	}
 
